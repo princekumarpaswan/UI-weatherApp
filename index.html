@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,99 +8,376 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Weather | Get weather of your city</title>
 </head>
+
 <body>
     <Section>
         <!-- Nav section -->
-        <div class="flex flex-wrap justify-around bg-amber-200 items-center rounded-b-[10px] p-5">
+        <div class="md:flex md:flex-wrap md:justify-around bg-amber-200 items-center rounded-b-[10px] p-5">
+            <div class="ml-[6rem] md:ml-0">
+                <h1 class="text-4xl font-black">Weather</h1>
+            </div>
+
+            <div class="mt-5 ml-[3rem] md:ml-0  lg:mt-0">
+                <input id="serch" class="rounded h-8" type="text">
+                <button onclick="handleClick()"
+                    class="ml-2 px-4 mt-5 md:mt-0 ml-[5rem] md:ml-0 h-8 bg-amber-600 rounded font-[500]">Search</button>
+            </div>
+
+            <div class="mt-5 lg:mt-0 ml-[6.6rem] md:ml-0 ">
+                <a href="https://github.com/princekumarpaswan" target="_blank"><button
+                        class="ml-2 px-4 h-8 bg-amber-600 rounded font-[500] ">My GitHub</button></a>
+            </div>
+
+        </div>
+
+        <div class="lg:flex lg:flex-wrap justify-around items-center hidden ">
             <div>
-                <h1 class="text-4xl font-black" >Weather</h1>
+                <!-- first -->
+                <div class="flex flex-wrap bg-white rounded-[20px]   bottom-0 p-4">
+                    <!-- date -->
+                    <div class="p-2 flex flex-wrap justify-around gap-3 items-center">
+                        <img class="w-[70px]" src="./img/icons8-calendar.gif" alt="img">
+                        <div>
+                            <p class="firstDate">30/04/2023</p>
+                            <p>Date</p>
+                        </div>
+                        <!-- weather -->
+                        <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
+                            <img class="w-[70px]" src="./img/icons8-sun.gif" alt="img">
+                            <div>
+                                <p>Weather mood</p>
+                                <p id="mood">Haze</p>
+                            </div>
+                        </div>
+
+                        <!-- </div>Temprature -->
+                        <div class="p-2 flex flex-wrap justify-around gap-3  items-center lg:border-l-[3px]">
+                            <img class="w-[70px]" src="./img/icons8-temperature.gif" alt="img">
+                            <div>
+                                <p class="tempr">55 &#37</p>
+                                <p>Temprature</p>
+                            </div>
+                        </div>
+
+                        <!-- speed -->
+
+                        <div class="p-2 flex flex-wrap justify-around lg:border-l-[3px] gap-3 items-center">
+                            <img class="w-[70px]" src="./img/icons8-windsock.gif" alt="img">
+                            <div>
+                                <p>3.6</p>
+                                <p>Speed</p>
+                            </div>
+                        </div>
+
+                        <!-- pressure -->
+
+                        <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
+                            <img class="w-[70px]" src="./img/icons8-windy-weather.gif" alt="img">
+                            <div>
+                                <p>1011</p>
+                                <p>Pressure</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- second -->
+                <div class="flex flex-wrap bg-white rounded-[20px]   bottom-0 p-4">
+                    <!-- date -->
+                    <div class="p-2 flex flex-wrap justify-around gap-3 items-center">
+                        <img class="w-[70px]" src="./img/icons8-calendar.gif" alt="img">
+                        <div>
+                            <p class="firstDate">30/04/2023</p>
+                            <p>Date</p>
+                        </div>
+                        <!-- weather -->
+                        <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
+                            <img class="w-[70px]" src="./img/icons8-sun.gif" alt="img">
+                            <div>
+                                <p>Weather mood</p>
+                                <p id="mood">Haze</p>
+                            </div>
+                        </div>
+
+                        <!-- </div>Temprature -->
+                        <div class="p-2 flex flex-wrap justify-around gap-3  items-center lg:border-l-[3px]">
+                            <img class="w-[70px]" src="./img/icons8-temperature.gif" alt="img">
+                            <div>
+                                <p class="tempr">55 &#37</p>
+                                <p>Temprature</p>
+                            </div>
+                        </div>
+
+                        <!-- speed -->
+
+                        <div class="p-2 flex flex-wrap justify-around lg:border-l-[3px] gap-3 items-center">
+                            <img class="w-[70px]" src="./img/icons8-windsock.gif" alt="img">
+                            <div>
+                                <p>3.6</p>
+                                <p>Speed</p>
+                            </div>
+                        </div>
+
+                        <!-- pressure -->
+
+                        <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
+                            <img class="w-[70px]" src="./img/icons8-windy-weather.gif" alt="img">
+                            <div>
+                                <p>1011</p>
+                                <p>Pressure</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- third -->
+                <div class="flex flex-wrap bg-white rounded-[20px]   bottom-0 p-4">
+                    <!-- date -->
+                    <div class="p-2 flex flex-wrap justify-around gap-3 items-center">
+                        <img class="w-[70px]" src="./img/icons8-calendar.gif" alt="img">
+                        <div>
+                            <p class="firstDate">30/04/2023</p>
+                            <p>Date</p>
+                        </div>
+                        <!-- weather -->
+                        <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
+                            <img class="w-[70px]" src="./img/icons8-sun.gif" alt="img">
+                            <div>
+                                <p>Weather mood</p>
+                                <p id="mood">Haze</p>
+                            </div>
+                        </div>
+
+                        <!-- </div>Temprature -->
+                        <div class="p-2 flex flex-wrap justify-around gap-3  items-center lg:border-l-[3px]">
+                            <img class="w-[70px]" src="./img/icons8-temperature.gif" alt="img">
+                            <div>
+                                <p class="tempr">55 &#37</p>
+                                <p>Temprature</p>
+                            </div>
+                        </div>
+
+                        <!-- speed -->
+
+                        <div class="p-2 flex flex-wrap justify-around lg:border-l-[3px] gap-3 items-center">
+                            <img class="w-[70px]" src="./img/icons8-windsock.gif" alt="img">
+                            <div>
+                                <p>3.6</p>
+                                <p>Speed</p>
+                            </div>
+                        </div>
+
+                        <!-- pressure -->
+
+                        <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
+                            <img class="w-[70px]" src="./img/icons8-windy-weather.gif" alt="img">
+                            <div>
+                                <p>1011</p>
+                                <p>Pressure</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- forth -->
+
+                <div class="flex flex-wrap bg-white rounded-[20px]   bottom-0 p-4">
+                    <!-- date -->
+                    <div class="p-2 flex flex-wrap justify-around gap-3 items-center">
+                        <img class="w-[70px]" src="./img/icons8-calendar.gif" alt="img">
+                        <div>
+                            <p class="firstDate">30/04/2023</p>
+                            <p>Date</p>
+                        </div>
+                        <!-- weather -->
+                        <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
+                            <img class="w-[70px]" src="./img/icons8-sun.gif" alt="img">
+                            <div>
+                                <p>Weather mood</p>
+                                <p id="mood">Haze</p>
+                            </div>
+                        </div>
+
+                        <!-- </div>Temprature -->
+                        <div class="p-2 flex flex-wrap justify-around gap-3  items-center lg:border-l-[3px]">
+                            <img class="w-[70px]" src="./img/icons8-temperature.gif" alt="img">
+                            <div>
+                                <p class="tempr">55 &#37</p>
+                                <p>Temprature</p>
+                            </div>
+                        </div>
+
+                        <!-- speed -->
+
+                        <div class="p-2 flex flex-wrap justify-around lg:border-l-[3px] gap-3 items-center">
+                            <img class="w-[70px]" src="./img/icons8-windsock.gif" alt="img">
+                            <div>
+                                <p>3.6</p>
+                                <p>Speed</p>
+                            </div>
+                        </div>
+
+                        <!-- pressure -->
+
+                        <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
+                            <img class="w-[70px]" src="./img/icons8-windy-weather.gif" alt="img">
+                            <div>
+                                <p>1011</p>
+                                <p>Pressure</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- fifth -->
+
+                <div class="flex flex-wrap bg-white rounded-[20px]   bottom-0 p-4">
+                    <!-- date -->
+                    <div class="p-2 flex flex-wrap justify-around gap-3 items-center">
+                        <img class="w-[70px]" src="./img/icons8-calendar.gif" alt="img">
+                        <div>
+                            <p class="firstDate">30/04/2023</p>
+                            <p>Date</p>
+                        </div>
+                        <!-- weather -->
+                        <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
+                            <img class="w-[70px]" src="./img/icons8-sun.gif" alt="img">
+                            <div>
+                                <p>Weather mood</p>
+                                <p id="mood">Haze</p>
+                            </div>
+                        </div>
+
+                        <!-- </div>Temprature -->
+                        <div class="p-2 flex flex-wrap justify-around gap-3  items-center lg:border-l-[3px]">
+                            <img class="w-[70px]" src="./img/icons8-temperature.gif" alt="img">
+                            <div>
+                                <p class="tempr">55 &#37</p>
+                                <p>Temprature</p>
+                            </div>
+                        </div>
+
+                        <!-- speed -->
+
+                        <div class="p-2 flex flex-wrap justify-around lg:border-l-[3px] gap-3 items-center">
+                            <img class="w-[70px]" src="./img/icons8-windsock.gif" alt="img">
+                            <div>
+                                <p>3.6</p>
+                                <p>Speed</p>
+                            </div>
+                        </div>
+
+                        <!-- pressure -->
+
+                        <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
+                            <img class="w-[70px]" src="./img/icons8-windy-weather.gif" alt="img">
+                            <div>
+                                <p>1011</p>
+                                <p>Pressure</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
 
-            <div class="mt-5 lg:mt-0" >
-                <input class="rounded h-8" type="text">
-                <button class="ml-2 px-4 h-8 bg-amber-600 rounded font-[500]" >Search</button>
-            </div>
 
-            <div class="mt-5 lg:mt-0">
-             <a href="https://github.com/princekumarpaswan" target="_blank"  ><button class="ml-2 px-4 h-8 bg-amber-600 rounded font-[500] ">My GitHub</button></a>
+            <!-- Hero secton -->
+            <div class="hidden lg:flex flex-wrap justify-center relative mt-[100px]">
+                <video src="./img/Sunny day.mp4" autoplay="true" muted loop="true"></video>
+            </div>
+        </div>
+
+        <div class=" lg:hidden flex flex-wrap justify-center mt-10 relative mt-[100px]">
+            <video src="./img/Sunny day.mp4" autoplay="true" muted loop="true"></video>
+        </div>
+
+
+
+
+        <div>
+
+            <div
+                class=" lg:flex lg:justify-center mt-10 lg:mt-0   rounded-t-[30px] p-5 w-[100vw] absolute md:bottom-0 bg-amber-200">
+                <div>
+                    <div class="p-2  lg:hidden bg-white rounded-[20px] w-[90vw] gap-3 items-center">
+
+                        <!-- weather -->
+                        <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
+                            <img class="w-[70px]" src="./img/icons8-sun.gif" alt="img">
+                            <div>
+                                <p>Weather mood</p>
+                                <p id="wMood">Haze</p>
+                            </div>
+                        </div>
+
+                        <!-- </div>Temprature -->
+                        <div class="p-2 flex flex-wrap justify-around gap-3  items-center lg:border-l-[3px]">
+                            <img class="w-[70px]" src="./img/icons8-temperature.gif" alt="img">
+                            <div>
+                                <p id="tempr">55 &#37</p>
+                                <p>Temprature</p>
+                            </div>
+                        </div>
+
+                        <!-- speed -->
+
+                        <div class="p-2 flex flex-wrap justify-around lg:border-l-[3px] gap-3 items-center">
+                            <img class="w-[70px]" src="./img/icons8-windsock.gif" alt="img">
+                            <div>
+                                <p id="speed">3.6</p>
+                                <p>Speed</p>
+                            </div>
+                        </div>
+
+                        <!-- pressure -->
+
+                        <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
+                            <img class="w-[70px]" src="./img/icons8-windy-weather.gif" alt="img">
+                            <div>
+                                <p>1011</p>
+                                <p id="press">Pressure</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <!-- city name date time main sab info -->
+                <div
+                    class=" bg-black  text-white mt-[20px] lg:mt-0 flex  flex-wrap text-center p-4 rounded-[20px]  items-center">
+                    <div class="flex  flex-wrap">
+                        <h1 id="mainTemp" class="lg:text-5xl">32.97&deg</h1>
+                        <div class="ml-3">
+                            <h1 class="text-2xl">SUNNY</h1>
+                            <p id="city" class="text-sm mt-[-5px]">Kolkata, IN</p>
+                        </div>
+                    </div>
+
+                    <div class="ml-10 lg:ml-5 bg-amber-600 p-4 rounded-[20px] text-black text-[600]">
+                        <p id="mainDate">24/020/2023</p>
+                        <p id="now">16:57:16</p>
+                    </div>
+                </div>
             </div>
 
         </div>
 
 
-        <!-- Hero secton -->
-        <div class="flex flex-wrap justify-center mt-10 relative mt-[100px]" >
-            <video src="./img/Sunny day.mp4" autoplay="true" muted loop="true" ></video>
-        </div>
 
-
-<div  class="flex flex-wrap bg-amber-200  absolute bottom-0 justify-evenly font-[500] align-center w-[100vw] p-5 rounded-t-[10px] ">
-            <!-- infromation section -->
-
-            <div class="flex flex-wrap bg-white rounded-[20px]   bottom-0 p-4" >
-                <!-- weather -->
-                <div class="p-2 flex flex-wrap justify-around gap-3 items-center" >
-                    <img class="w-[70px]" src="./img/icons8-sun.gif" alt="img">
-                    <div>
-                        <p>17:37 PM</p>
-                        <p>Haze</p>
-                    </div>
-                </div>
-    
-                <!-- </div>humidity -->
-                <div class="p-2 flex flex-wrap justify-around gap-3  items-center lg:border-l-[3px]">
-                    <img class="w-[70px]" src="./img/icons8-hygrometer.gif" alt="img">
-                    <div>
-                        <p>55	&#37</p>
-                        <p>Humidity</p>
-                    </div>
-                </div>
-    
-                <!-- speed -->
-    
-                <div class="p-2 flex flex-wrap justify-around lg:border-l-[3px] gap-3 items-center">
-                    <img class="w-[70px]" src="./img/icons8-windsock.gif" alt="img">
-                    <div>
-                        <p>3.6</p>
-                        <p>Speed</p>
-                    </div>
-                </div>
-    
-                <!-- pressure -->
-    
-                <div class="p-2 flex flex-wrap justify-around gap-3 lg:border-l-[3px] items-center">
-                    <img class="w-[70px]" src="./img/icons8-windy-weather.gif" alt="img">
-                    <div>
-                        <p>1011</p>
-                        <p>Pressure</p>
-                    </div>
-                </div>
-    
-                
-    
-            </div>
-
-
-
-            <!-- city name date time main sab info -->
-            <div class=" bg-black text-white mt-[20px] lg:mt-0 flex flex-wrap text-center p-4 rounded-[20px]  items-center">
-                <div class="flex flex-wrap">
-                 <h1 class="text-5xl">32.97&deg</h1>
-                 <div class="ml-3">
-                     <h1 class="text-2xl">SUNNY</h1>
-                     <p class="text-sm mt-[-5px]">Kolkata, IN</p>
-                 </div>
-                </div>
-    
-                <div class="ml-5 bg-amber-600 p-4 rounded-[20px] text-black text-[600]">
-                 <p>24/020/2023</p>
-                 <p>16:57:16</p>
-                </div>
-             </div>
-</div>
     </Section>
 
     <script src="./script.js"></script>
-    
+
 </body>
+
 </html>
