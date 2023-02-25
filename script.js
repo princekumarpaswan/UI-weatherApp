@@ -154,6 +154,6 @@ if (changer) {
 const handleClick = () => {
     getData()
     let screen = window.innerWidth;
-    if (screen <= "650") window.scrollBy(0, 100)
+    if (screen <= "650") window.scrollBy(0, 800)
 
 }
